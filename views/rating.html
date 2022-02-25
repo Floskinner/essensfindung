@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rating &mdash; Essensfindung 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Recipe" href="recipe.html" />
+    <link rel="prev" title="Index" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Essensfindung
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Documents</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../exceptions/exceptions.html">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools/tools.html">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../db/db.html">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../schemes/schemes.html">Schemes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="views.html">Views</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="error.html">Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html">Index</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Rating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="recipe.html">Recipe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="restaurant.html">Restaurant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signin.html">Signin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../services/services.html">Services</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Essensfindung</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../api.html">API Documents</a> &raquo;</li>
+          <li><a href="views.html">Views</a> &raquo;</li>
+      <li>Rating</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/views/rating.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-views.rating">
+<span id="rating"></span><h1>Rating<a class="headerlink" href="#module-views.rating" title="Permalink to this headline"></a></h1>
+<p>Router and logic for the rating of the Website</p>
+<p><strong>Functions:</strong></p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#views.rating.delete_rating" title="views.rating.delete_rating"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_rating</span></code></a>(request, place_id, rest_name)</p></td>
+<td><p>Delete user rating</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#views.rating.edit_rating" title="views.rating.edit_rating"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edit_rating</span></code></a>(request, place_id[, db_session, ...])</p></td>
+<td><p>Return the rendered template for displaying rating that matches place_id for editing</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#views.rating.edit_rating_post" title="views.rating.edit_rating_post"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edit_rating_post</span></code></a>(request[, db_session, ...])</p></td>
+<td><p>Save rating of user</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#views.rating.rating" title="views.rating.rating"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rating</span></code></a>(request[, db_session, current_user])</p></td>
+<td><p>Get all ratings of user</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="views.rating.delete_rating">
+<span class="sig-prename descclassname"><span class="pre">views.rating.</span></span><span class="sig-name descname"><span class="pre">delete_rating</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">starlette.requests.Request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">place_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rest_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">sqlalchemy.orm.session.Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../schemes/schemes.html#schemes.scheme_user.User" title="schemes.scheme_user.User"><span class="pre">schemes.scheme_user.User</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/views/rating.html#delete_rating"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#views.rating.delete_rating" title="Permalink to this definition"></a></dt>
+<dd><p>Delete user rating</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> (<em>Request</em>) – the http request</p></li>
+<li><p><strong>place_id</strong> (<em>str</em>) – the place id</p></li>
+<li><p><strong>rest_name</strong> (<em>str</em>) – the restaurant name</p></li>
+<li><p><strong>db_session</strong> (<em>Session</em><em>, </em><em>optional</em>) – the db session. Defaults to Depends(get_db).</p></li>
+<li><p><strong>current_user</strong> (<a class="reference internal" href="../schemes/schemes.html#schemes.scheme_user.User" title="schemes.scheme_user.User"><em>User</em></a><em>, </em><em>optional</em>) – the current user. Defaults to Depends(get_current_user).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>redirect to /rating/</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>RedirectResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="views.rating.edit_rating">
+<span class="sig-prename descclassname"><span class="pre">views.rating.</span></span><span class="sig-name descname"><span class="pre">edit_rating</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">starlette.requests.Request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">place_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">sqlalchemy.orm.session.Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../schemes/schemes.html#schemes.scheme_user.User" title="schemes.scheme_user.User"><span class="pre">schemes.scheme_user.User</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/views/rating.html#edit_rating"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#views.rating.edit_rating" title="Permalink to this definition"></a></dt>
+<dd><p>Return the rendered template for displaying rating that matches place_id for editing</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> (<em>Request</em>) – Request for template</p></li>
+<li><p><strong>place_id</strong> (<em>str</em>) – identifier for restaurant</p></li>
+<li><p><strong>db_session</strong> (<em>Session</em><em>, </em><em>optional</em>) – current db_session. Defaults to Depends(get_db).</p></li>
+<li><p><strong>current_user</strong> (<a class="reference internal" href="../schemes/schemes.html#schemes.scheme_user.User" title="schemes.scheme_user.User"><em>User</em></a><em>, </em><em>optional</em>) – current logged in user. Defaults to Depends(get_current_user).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>rendered template</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>HTMLResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="views.rating.edit_rating_post">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">views.rating.</span></span><span class="sig-name descname"><span class="pre">edit_rating_post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">starlette.requests.Request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">sqlalchemy.orm.session.Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../schemes/schemes.html#schemes.scheme_user.User" title="schemes.scheme_user.User"><span class="pre">schemes.scheme_user.User</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/views/rating.html#edit_rating_post"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#views.rating.edit_rating_post" title="Permalink to this definition"></a></dt>
+<dd><p>Save rating of user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> (<em>Request</em>) – the http request</p></li>
+<li><p><strong>db_session</strong> (<em>Session</em><em>, </em><em>optional</em>) – the db session. Defaults to Depends(get_db).</p></li>
+<li><p><strong>current_user</strong> (<a class="reference internal" href="../schemes/schemes.html#schemes.scheme_user.User" title="schemes.scheme_user.User"><em>User</em></a><em>, </em><em>optional</em>) – the current user. Defaults to Depends(get_current_user).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>redirect to …/rating/</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>RedirectResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="views.rating.rating">
+<span class="sig-prename descclassname"><span class="pre">views.rating.</span></span><span class="sig-name descname"><span class="pre">rating</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">starlette.requests.Request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db_session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">sqlalchemy.orm.session.Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../schemes/schemes.html#schemes.scheme_user.User" title="schemes.scheme_user.User"><span class="pre">schemes.scheme_user.User</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/views/rating.html#rating"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#views.rating.rating" title="Permalink to this definition"></a></dt>
+<dd><p>Get all ratings of user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> (<em>Request</em>) – the http request</p></li>
+<li><p><strong>db_session</strong> (<em>Session</em><em>, </em><em>optional</em>) – the db session. Defaults to Depends(get_db).</p></li>
+<li><p><strong>current_user</strong> (<a class="reference internal" href="../schemes/schemes.html#schemes.scheme_user.User" title="schemes.scheme_user.User"><em>User</em></a><em>, </em><em>optional</em>) – the current user. Defaults to Depends(get_current_user).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the http response</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>TemplateResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Index" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="recipe.html" class="btn btn-neutral float-right" title="Recipe" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Florian Glaser, Florian Herkommer, Baldur Siegel, David Felder, Jonas Straub.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
